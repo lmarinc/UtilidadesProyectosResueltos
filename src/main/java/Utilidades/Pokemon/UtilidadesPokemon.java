@@ -40,7 +40,12 @@ public class UtilidadesPokemon {
 
     public static List<Pokemon> obtenerPokemonConTipos1(List<Pokemon> pokemons, List<TipoPokemon> tipos){
 
-        return new ArrayList<>();
+        return pokemons.stream()
+                .filter(pokemon -> pokemon.getTipos().stream()
+                        .filter(tipos::contains)
+                        .findFirst()
+                        .isPresent())
+                .collect(Collectors.toList());
     }
 
 
