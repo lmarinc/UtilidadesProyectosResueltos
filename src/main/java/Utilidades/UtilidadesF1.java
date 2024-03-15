@@ -133,14 +133,18 @@ public class UtilidadesF1 {
         return mapaFinal;
 
 
-//        carreras.forEach(c->c.getPosiciones().forEach((k, v)->{
-//            if(mapaFinal.containsKey(v)){
-//                mapaFinal.put(v,mapaFinal.get(v)+c.getPuntosPorPosicion().get(k));
-//            }else{
-//                mapaFinal.put(v,c.getPuntosPorPosicion().get(k));
+//        Map<Piloto, Double> mapaFinal = new HashMap<>();
+//
+//        for (Carrera c : carreras) {
+//            for (Integer i : c.getPosiciones().keySet()) {
+//                Piloto piloto = c.getPosiciones().get(i);
+//                Double puntosPorCarrera = c.getPuntosPorPosicion().get(i);
+//                mapaFinal.merge(piloto, puntosPorCarrera, Double::sum);
 //            }
-//        }));
+//        }
+//
 //        return mapaFinal;
+//    }
     }
 
 }

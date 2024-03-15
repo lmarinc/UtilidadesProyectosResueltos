@@ -170,11 +170,12 @@ public class UtilidadesFeria {
 
         for(Producto p: consumo.keySet()){
             Double total = p.getPrecio() * consumo.get(p);
-            if(totalGastadoPorTipo.containsKey(p.getProducto())){
-                totalGastadoPorTipo.put(p.getProducto(), totalGastadoPorTipo.get(p.getProducto()) + total);
-            }else{
-                totalGastadoPorTipo.put(p.getProducto(),  total);
-            }
+//            if(totalGastadoPorTipo.containsKey(p.getProducto())){
+//                totalGastadoPorTipo.put(p.getProducto(), totalGastadoPorTipo.get(p.getProducto()) + total);
+//            }else{
+//                totalGastadoPorTipo.put(p.getProducto(),  total);
+//            }
+            totalGastadoPorTipo.merge(p.getProducto(), total, Double::sum);
         }
 
         resumenDia.setTotalGastadoPorTipoProducto(totalGastadoPorTipo);
